@@ -1,8 +1,9 @@
-require('dotenv').config()
-
+var dotenv = require('dotenv');
 var mysql = require('mysql');
 
-var con = mysql.createConnection({
+dotenv.config();
+
+var database = mysql.createConnection({
   host: process.env.host,
   user: process.env.user,
   password: process.env.password,
@@ -10,9 +11,5 @@ var con = mysql.createConnection({
   database: process.env.database
 });
 
-con.connect(function(err) {
-  if (err) throw err;
-    console.log("Connected!");
-  });
-
+module.exports = database;
 
