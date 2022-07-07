@@ -1,16 +1,23 @@
-import { useEffect, useState } from "react";
+import "./Feed.css";
 
-function Feed(posts) {
-	const [post, setPost] = useState([0]);
+import About from "../About/About";
+import Photos from "../Photos/Photos";
+import Posts from "../Posts/Posts";
 
-	useEffect(() => {
-		setPost(posts);
-	}, [posts]);
-
-	if (post[0] !== 0 && post.posts.length !== 0) {
-		console.log(posts.posts[0].url);
-		return <div>{posts.posts[0].url}</div>;
-	}
+function Feed({ posts, users }) {
+	return (
+		<div className="feed-container">
+			<div className="about">
+				<About user={users[0]} />
+			</div>
+			<div className="posts">
+				<Posts user={posts} />
+			</div>
+			<div className="photos">
+				<Photos user={posts} />
+			</div>
+		</div>
+	);
 }
 
 export default Feed;

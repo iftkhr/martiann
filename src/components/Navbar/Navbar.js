@@ -1,16 +1,9 @@
-import { useEffect, useState } from "react";
 import "./Navbar.css";
 
 function Navbar(users) {
-	const [user, setUser] = useState([0]);
 
-	useEffect(() => {
-		setUser(users);
-	}, [users]);
-
-	if (user[0] !== 0 && user.users.length !== 0) {
 		return (
-			<div className="container">
+			<div className="navbar-container">
 				<div className="logo">Martiann</div>
 				<div className="nav">
 					<div className="nav-home">
@@ -38,6 +31,5 @@ function Navbar(users) {
 			</div>
 		);
 	}
-}
 
 export default Navbar;

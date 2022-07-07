@@ -6,8 +6,8 @@ import Feed from "./components/Feed/Feed";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-	const [users, setUsers] = useState([]);
-	const [posts, setPosts] = useState([]);
+	const [users, setUsers] = useState([0]);
+	const [posts, setPosts] = useState([0]);
 
 	useEffect(() => {
 		axios
@@ -27,14 +27,16 @@ function App() {
 			.catch((error) => console.log(error));
 	}, []);
 
-	return (
-		<Router>
-			<Navbar users={users} />
-			<Routes>
-				<Route exact path="/" element={<Feed posts={posts} />} />
-			</Routes>
-		</Router>
-	);
+  if ((posts[0] !== 0 && posts.length !== 0) && (users[0] !== 0 && users.length !== 0)) {
+    return (
+      <Router>
+          <Navbar users={users} />
+        <Routes>
+          <Route exact path="/" element={<Feed posts={posts} users={users} />} />
+        </Routes>
+      </Router>
+    );
+}
 }
 
 export default App;

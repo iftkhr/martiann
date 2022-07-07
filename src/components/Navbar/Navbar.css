@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@500&display=swap");
 
-.container {
+.navbar-container {
 	display: grid;
 	grid-template-columns: 50% 50%;
 	align-items: center;
