@@ -12,8 +12,8 @@ function Feed({ posts, users }) {
 				<About user={users[0]} />
 			</div>
 			<div className="posts">
-                <AddPost user={users[0]}/>
-				<Posts posts={posts} />
+				<AddPost user={users[0]} />
+				<Posts posts={posts} user={users[0]} />
 			</div>
 			<div className="photos">
 				<Photos posts={posts} />

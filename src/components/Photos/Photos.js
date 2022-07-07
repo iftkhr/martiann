@@ -1,7 +1,7 @@
 import "./Photos.css";
 
 function Photos(posts) {
-    console.log(posts)
+
     let arr = [];
     for (let i = 0; i < 4; i++) {
         arr.push(posts.posts[i].url)

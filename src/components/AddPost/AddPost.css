@@ -23,8 +23,16 @@
 	border-radius: 5px;
 }
 
-.addpost-update form button {
-	display: inline;
+.addpost-buttons {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: left;
+}
+
+.addpost-buttons button {
+	display: grid;
+	grid-template-columns: 15% 85%;
+	align-items: center;
 	font-size: 1.3em;
 	color: #333;
 	height: 40px;
@@ -34,7 +42,8 @@
 	margin-top: 10px;
 }
 
-.addpost-update form button img {
+.addpost-buttons button img {
 	width: 20px;
 	height: 20px;
+	margin-right: 10px;
 }

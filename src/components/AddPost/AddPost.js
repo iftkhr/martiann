@@ -13,10 +13,12 @@ function AddPost(user) {
 			<div className="addpost-update">
 				<form>
 					<textarea type="textarea" placeholder="What's happening?" />
-					<button>
-						<img alt="" src="photo-icon.svg" /> Upload File
-					</button>
-					<button>Post</button>
+					<div className="addpost-buttons">
+						<button>
+							<img alt="" src="photo-icon.svg" /> Upload File
+						</button>
+						<button>Post</button>
+					</div>
 				</form>
 			</div>
 		</div>

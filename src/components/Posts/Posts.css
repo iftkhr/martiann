@@ -1,0 +1,17 @@
+.posts-container {
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	gap: 20px;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 5px 0 #bbb;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+.post {
+	border: 1px solid #bbb;
+	padding: 10px;
+	border-radius: 5px;
+}
