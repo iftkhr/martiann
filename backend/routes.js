@@ -1,20 +1,25 @@
 const express = require('express');
+const router = express.Router();
 const db = require('./database')
 
-const app = express();
-const  port = process.env.port;
-app.use(express.json())
+router.route('/').get((req, res) => {
+    db.query("SELECT * FROM posts", (err,result)=>{
+        if(err) {
+        console.log(err)
+        }
+        console.log(result)
+    res.send(result)
+    });
+});
 
-// Route to get all posts
-app.get("/api/get", (req,res)=>{
-db.query("SELECT * FROM posts", (err,result)=>{
-    if(err) {
-    console.log(err)
-    }
-    console.log(result)
-res.send(result)
-});});
+router.route('/home').get((req, res) => {
+    db.query("SELECT * FROM users", (err,result)=>{
+        if(err) {
+        console.log(err)
+        }
+        console.log(result)
+    res.send(result)
+    });
+});
 
-app.listen(port, ()=>{
-    console.log(`Server is running on ${port}`)
-})
+module.exports = router;
