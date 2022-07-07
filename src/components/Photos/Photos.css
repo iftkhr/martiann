@@ -1,0 +1,56 @@
+.photos-container {
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 5px 0 #bbb;
+	padding: 20px;
+}
+
+.photos {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 20px;
+	justify-items: center;
+	align-items: center;
+}
+
+.photos-heading {
+	font-size: 1.5em;
+	margin: 10px 0;
+}
+
+.photo {
+	width: 150px;
+	height: 150px;
+	overflow: hidden ;
+	cursor: pointer;
+}
+
+.photo img {
+	width: 100%;
+}
+
+
+.photos-link {
+	justify-self: left;
+	cursor: pointer;
+	color: #808080;
+}
+
+.photos-link:hover {
+	color: #333;
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 1440px) {
+	.photos-container {
+		width: 100%;
+		justify-self: left;
+	}
+
+	.photo {
+		width: 135px;
+		height: 135px;
+		overflow: hidden ;
+		cursor: pointer;
+	}
+}

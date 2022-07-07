@@ -1,34 +1,45 @@
 .about-container {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 5px 0 #bbb;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 5px 0 #bbb;
 }
 
 .about-photo img {
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-
+	width: 100%;
+	border-radius: 10px 10px 0 0;
 }
 
 .about-details {
-    display: grid;
-    gap: 10px;
-    padding: 10px;
+	display: grid;
+	gap: 10px;
+	padding: 10px;
 }
 
 .details-heading {
-    font-size: 1.5em;
-    margin: 10px 0;
+	font-size: 1.5em;
+	margin: 10px 0;
+}
+
+.details-link {
+	margin-left: 10px;
+	font-size: 0.7em;
+	cursor: pointer;
+	color: #808080;
+}
+
+.details-link:hover {
+	color: #333;
+	text-decoration: underline;
 }
 
 .details {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: left;
-    gap: 10px;
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: left;
+	gap: 10px;
 }
 
 .about-details img {
-    width: 20px;
-    height: 20px;
+	width: 20px;
+	height: 20px;
 }

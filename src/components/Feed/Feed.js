@@ -3,6 +3,7 @@ import "./Feed.css";
 import About from "../About/About";
 import Photos from "../Photos/Photos";
 import Posts from "../Posts/Posts";
+import AddPost from "../AddPost/AddPost";
 
 function Feed({ posts, users }) {
 	return (
@@ -11,10 +12,11 @@ function Feed({ posts, users }) {
 				<About user={users[0]} />
 			</div>
 			<div className="posts">
-				<Posts user={posts} />
+                <AddPost user={users[0]}/>
+				<Posts posts={posts} />
 			</div>
 			<div className="photos">
-				<Photos user={posts} />
+				<Photos posts={posts} />
 			</div>
 		</div>
 	);

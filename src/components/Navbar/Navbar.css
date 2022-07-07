@@ -10,17 +10,17 @@
 }
 
 .logo {
-    justify-self: left;
+	justify-self: left;
 	font-family: "Edu QLD Beginner", cursive;
 	font-size: 3.5em;
 }
 
 .nav {
-    justify-self: right;
+	justify-self: right;
 	display: grid;
 	grid-template-columns: 20% 35% 45%;
 	align-items: center;
-    min-width: 400px;
+	min-width: 400px;
 }
 
 .nav a {
@@ -42,7 +42,7 @@
 
 .user-photo {
 	width: auto;
-    justify-self: center;
+	justify-self: center;
 }
 
 .user-photo img {
@@ -56,39 +56,39 @@
 }
 
 .nav-icons {
-    display: grid;
+	display: grid;
 	grid-template-columns: repeat(3, auto);
 	align-items: center;
 }
 
 .icons-photo {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    background: #f2edeb;
-    height: 25px;
-    width: 25px;
-    padding: 5px;
-    border-radius: 25px;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	background: #f2edeb;
+	height: 25px;
+	width: 25px;
+	padding: 5px;
+	border-radius: 25px;
 }
 
 .icons-photo:hover {
-    box-shadow: 0 0 10px 0 #bbb ;
-    cursor: pointer;
+	box-shadow: 0 0 10px 0 #bbb;
+	cursor: pointer;
 }
 
 .icons-photo img {
-    width: 20px;
-    height: 20px;
+	width: 20px;
+	height: 20px;
 }
 
-@media screen and (max-width:700px) {
-    .container {
-        display: grid;
-        grid-template-columns: none;
-        justify-content: center;
-    }
-    .logo {
-        justify-self: center;
-    }
+@media screen and (max-width: 700px) {
+	.navbar-container {
+		display: grid;
+		grid-template-columns: none;
+		justify-content: center;
+	}
+	.logo {
+		justify-self: center;
+	}
 }
