@@ -6,6 +6,7 @@ const cors = require("cors");
 
 dotenv.config();
 
+// connect to database
 const database = mysql.createConnection({
 	host: process.env.host,
 	user: process.env.user,
@@ -25,6 +26,7 @@ database.connect((err) => {
 	console.log("SQL database connection established successfully!");
 });
 
+// APIs to get data
 app.get("/api", (req, res) => {
 	res.send("Go to /api/users for users and /api/posts for posts");
 });
@@ -47,6 +49,7 @@ app.get("/api/posts", (req, res) => {
 	});
 });
 
+// production
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static("build"));
 	app.get("*", (req, res) => {
@@ -54,6 +57,7 @@ if (process.env.NODE_ENV === "production") {
 	});
 }
 
+// server port check
 app.listen(port, () => {
 	console.log(`Server is running on port: ${port}`);
 });

@@ -3,13 +3,14 @@ import Post from "../Post/Post";
 import "./Posts.css";
 
 function Posts({ posts, user }) {
-	const [postsToAdd, setPostsToAdd] = useState(10);
+	const [postsToAdd, setPostsToAdd] = useState(10); // get and show top 10 photos
 	const [postsToLoad, setPostsToLoad] = useState([
-		...posts.slice(0, postsToAdd),
+		...posts.slice(0, postsToAdd), // get and show more photos on scroll
 	]);
 
 	var lastScrollTop = 0;
 
+	// function to add more photos in feed
 	window.addEventListener(
 		"scroll",
 		function () {

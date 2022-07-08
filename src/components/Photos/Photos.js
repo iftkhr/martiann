@@ -3,7 +3,7 @@ import "./Photos.css";
 function Photos(posts) {
 	let arr = [];
 	for (let i = 0; i < 4; i++) {
-		arr.push(posts.posts[i].url);
+		arr.push(posts.posts[i].url); // get and show only 4 photos
 	}
 	return (
 		<div className="photos-container">

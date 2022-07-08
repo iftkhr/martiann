@@ -1,5 +1,6 @@
 import "./Post.css";
 
+// function to get duration since last post
 function timeSince(date) {
 	if (typeof date !== "object") {
 		date = new Date(date);

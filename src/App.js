@@ -6,9 +6,10 @@ import Feed from "./components/Feed/Feed";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-	const [users, setUsers] = useState([0]);
-	const [posts, setPosts] = useState([0]);
+	const [users, setUsers] = useState([0]); //set users
+	const [posts, setPosts] = useState([0]); // set posts
 
+	// get users
 	useEffect(() => {
 		axios
 			.get("/api/users")
@@ -18,6 +19,7 @@ function App() {
 			.catch((error) => console.log(error));
 	}, []);
 
+	//get posts
 	useEffect(() => {
 		axios
 			.get("/api/posts")
@@ -27,6 +29,7 @@ function App() {
 			.catch((error) => console.log(error));
 	}, []);
 
+	// check if get successful
 	if (
 		posts[0] !== 0 &&
 		posts.length !== 0 &&
@@ -34,7 +37,7 @@ function App() {
 		users.length !== 0
 	) {
 		posts.sort((a, b) => {
-			return b.id - a.id;
+			return b.id - a.id; //sort posts by latest
 		});
 		return (
 			<Router>
