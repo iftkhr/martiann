@@ -11,7 +11,6 @@ router.route("/api/posts").get((req, res) => {
 		if (err) {
 			console.log(err);
 		}
-		console.log(result);
 		res.send(result);
 	});
 });
@@ -21,7 +20,6 @@ router.route("/api/users").get((req, res) => {
 		if (err) {
 			console.log(err);
 		}
-		console.log(result);
 		res.send(result);
 	});
 });

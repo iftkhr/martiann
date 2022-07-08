@@ -3,11 +3,15 @@ const path = require("path");
 const cors = require("cors");
 const db = require("./database");
 
+const morgan = require("morgan");
+
+
 require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 3306;
 
+app.use(morgan("tiny")); // logging framework
 app.use(cors());
 app.use(express.json());
 
