@@ -5,7 +5,6 @@ const db = require("./database");
 
 const morgan = require("morgan");
 
-
 require("dotenv").config();
 
 const app = express();
@@ -28,7 +27,13 @@ app.use("/", mainRouter);
 app.use("/api/posts", postsRouter);
 app.use("/api/users", usersRouter);
 
-app.use(express.static(path.resolve(__dirname, "../build")));
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static(path.join(__dirname, "build")));
+
+	app.get("*", (req, res) => {
+		res.sendFile(path.join(__dirname, "build", "index.html"));
+	});
+}
 
 app.listen(port, () => {
 	console.log(`Server is running on port: ${port}`);
