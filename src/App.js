@@ -11,7 +11,7 @@ function App() {
 
 	useEffect(() => {
 		axios
-			.get("/users")
+			.get("/api/users")
 			.then((response) => {
 				setUsers(response.data);
 			})
@@ -20,7 +20,7 @@ function App() {
 
 	useEffect(() => {
 		axios
-			.get("/posts")
+			.get("/api/posts")
 			.then((response) => {
 				setPosts(response.data);
 			})
