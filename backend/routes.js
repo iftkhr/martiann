@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const router = express.Router();
 const db = require("./database");
 
@@ -22,6 +23,10 @@ router.route("/api/users").get((req, res) => {
 		}
 		res.send(result);
 	});
+});
+
+router.route("*").get((req, res) => {
+	res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
 module.exports = router;

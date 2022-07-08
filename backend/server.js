@@ -10,6 +10,7 @@ const port = process.env.PORT || 3306;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "../build")));
 
 db.connect((err) => {
 	if (err) throw err;
@@ -19,18 +20,16 @@ db.connect((err) => {
 const mainRouter = require("./routes");
 const postsRouter = require("./routes");
 const usersRouter = require("./routes");
+const wildcardRouter = require("./routes");
 
 app.use("/", mainRouter);
 app.use("/api/posts", postsRouter);
 app.use("/api/users", usersRouter);
 
-if (process.env.NODE_ENV == "production") {
-	app.use(express.static(path.join(__dirname, "../build")));
+app.use("*", wildcardRouter);
 
-	app.get("/*", (req, res) => {
-		res.sendFile(path.join(__dirname, "../build", "index.html"));
-	});
-}
+
+
 
 app.listen(port, () => {
 	console.log(`Server is running on port: ${port}`);
