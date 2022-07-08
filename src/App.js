@@ -33,6 +33,9 @@ function App() {
 		users[0] !== 0 &&
 		users.length !== 0
 	) {
+		posts.sort((a, b) => {
+			return b.id - a.id;
+		});
 		return (
 			<Router>
 				<Navbar users={users} />
