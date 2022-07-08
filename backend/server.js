@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const cors = require("cors");
 const db = require("./database");
 
@@ -22,6 +23,8 @@ const usersRouter = require("./routes");
 app.use("/", mainRouter);
 app.use("/posts", postsRouter);
 app.use("/users", usersRouter);
+
+app.use(express.static(path.resolve(__dirname, "../build")));
 
 app.listen(port, () => {
 	console.log(`Server is running on port: ${port}`);
