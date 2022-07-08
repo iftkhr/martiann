@@ -7,7 +7,6 @@ function Posts({ posts, user }) {
 	const [postsToLoad, setPostsToLoad] = useState([
 		...posts.slice(0, postsToAdd),
 	]);
-	console.log(postsToAdd);
 
 	var lastScrollTop = 0;
 
@@ -17,13 +16,16 @@ function Posts({ posts, user }) {
 			var st = window.pageYOffset || document.documentElement.scrollTop;
 			if (st > lastScrollTop) {
 				var scrollPercentage = Math.floor(
-					100 * (window.pageYOffset / document.body.clientHeight)
+					100 * (window.pageYOffset / document.body.clientHeight),
 				);
-				if (scrollPercentage > 70 && scrollPercentage % 10 === 0 && window.pageYOffset && postsToAdd <= posts.length) {
+				if (
+					scrollPercentage > 70 &&
+					scrollPercentage % 10 === 0 &&
+					window.pageYOffset &&
+					postsToAdd <= posts.length
+				) {
 					setPostsToAdd(postsToAdd + 5);
 					setPostsToLoad([...posts.slice(0, postsToAdd)]);
-					console.log(postsToAdd);
-					console.log(scrollPercentage);
 				}
 			}
 			lastScrollTop = st <= 0 ? 0 : st;

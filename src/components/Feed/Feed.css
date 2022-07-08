@@ -14,10 +14,19 @@
 	.feed-container {
 		display: grid;
 		grid-template-columns: 30% 70%;
-		gap: 50px;
 	}
 
 	.posts {
 		grid-row: span 3;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.feed-container {
+		display: grid;
+		grid-template-columns: 100%;
+	}
+	.posts {
+		width: 100vw;
 	}
 }

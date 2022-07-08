@@ -11,7 +11,7 @@ function App() {
 
 	useEffect(() => {
 		axios
-			.get("http://localhost:3306/home")
+			.get("/users")
 			.then((response) => {
 				setUsers(response.data);
 			})
@@ -20,23 +20,32 @@ function App() {
 
 	useEffect(() => {
 		axios
-			.get("http://localhost:3306")
+			.get("/posts")
 			.then((response) => {
 				setPosts(response.data);
 			})
 			.catch((error) => console.log(error));
 	}, []);
 
-  if ((posts[0] !== 0 && posts.length !== 0) && (users[0] !== 0 && users.length !== 0)) {
-    return (
-      <Router>
-          <Navbar users={users} />
-        <Routes>
-          <Route exact path="/" element={<Feed posts={posts} users={users} />} />
-        </Routes>
-      </Router>
-    );
-}
+	if (
+		posts[0] !== 0 &&
+		posts.length !== 0 &&
+		users[0] !== 0 &&
+		users.length !== 0
+	) {
+		return (
+			<Router>
+				<Navbar users={users} />
+				<Routes>
+					<Route
+						exact
+						path="/"
+						element={<Feed posts={posts} users={users} />}
+					/>
+				</Routes>
+			</Router>
+		);
+	}
 }
 
 export default App;
