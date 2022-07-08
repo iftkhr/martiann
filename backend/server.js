@@ -21,8 +21,8 @@ const postsRouter = require("./routes");
 const usersRouter = require("./routes");
 
 app.use("/", mainRouter);
-app.use("/posts", postsRouter);
-app.use("/users", usersRouter);
+app.use("/api/posts", postsRouter);
+app.use("/api/users", usersRouter);
 
 app.use(express.static(path.resolve(__dirname, "../build")));
 
